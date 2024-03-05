@@ -33,10 +33,10 @@ import sys
 import threading
 import time
 import os
-from multiprocessing import Process
-from multiprocessing import Queue
+from multiprocessing import Process, Queue
 from datetime import datetime
 from QhX.detection import process1
+
 # Default number of processes to spawn
 DEFAULT_NUM_WORKERS = 4
 # Default number of seconds to pass between time loggings
@@ -108,8 +108,7 @@ class ParallelSolver():
     def process_wrapper(self):
         """
         Wrapper for the process function to integrate logging and result handling.
-        Takes id of self.setids_div for setids list to process
-         
+        
         Performed tasks:
          Starts background logging thread if required
          Processes data if data manager exists
